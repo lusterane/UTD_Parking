@@ -15,10 +15,13 @@ class CrawlRoot:
         self.ps3 = {}
         self.ps4 = {}
 
-    # finds parking options and available Spaces of PS1
+    # finds parking options and available Spaces of parking structure
     # returns dictionary of available space and level+color
-    def find_parking_ps1(self, soup):
-        for element in soup.findAll('table', {'id': 'ps1'}):
+    # param:
+    #   soup is the beautiful soup return
+    #   park_struc is string representation of parkign structure. EX: 'ps1' 'ps3' 'ps4'
+    def parse_parking(self, soup, park_struc):
+        for element in soup.findAll('table', {'id': park_struc}):
             body = element.find('tbody')
             # finds each row for parking
             for row in body.findAll('tr'):
@@ -27,52 +30,28 @@ class CrawlRoot:
                 option = cells[1].text
                 avail_space = cells[2].text
                 # note: levels may not be needed for this project
-                self.ps1[option] = avail_space
+                if park_struc == 'ps1':
+                    self.ps1[option] = avail_space
+                elif park_struc == 'ps3':
+                    self.ps3[option] = avail_space
+                else:
+                    self.ps4[option] = avail_space
                 # print('Level: ' + level + ' | Option: ' + option + ' | Available Spaces: ' + avail_space + " : ENTERED INTO DICTIONARY")
+                '''
+                # last checked info
+                last_checked = soup.find('table', {'id': 'ps4'}).find('p', {'class': 'centertight'}).text
+                print(last_checked)
+                '''
 
-    # finds parking options and available Spaces of PS3
-    # returns dictionary of available space and level+color
-    def find_parking_ps3(self, soup):
-        for element in soup.findAll('table', {'id': 'ps3'}):
-            body = element.find('tbody')
-            # finds each row for parking
-            for row in body.findAll('tr'):
-                cells = row.findAll("td")
-                level = cells[0].text
-                option = cells[1].text
-                avail_space = cells[2].text
-                # note: levels may not be needed for this project
-                self.ps3[option] = avail_space
-                # print('Level: ' + level + ' | Option: ' + option + ' | Available Spaces: ' + avail_space + " : ENTERED INTO DICTIONARY")
-
-    # finds parking options and available Spaces of PS4
-    # returns dictionary of available space and level+color
-    def find_parking_ps4(self, soup):
-        for element in soup.findAll('table', {'id': 'ps4'}):
-            body = element.find('tbody')
-            # finds each row for parking
-            for row in body.findAll('tr'):
-                cells = row.findAll("td")
-                level = cells[0].text
-                option = cells[1].text
-                avail_space = cells[2].text
-                # note: levels may not be needed for this project
-                self.ps4[option] = avail_space
-                # print('Level: ' + level + ' | Option: ' + option + ' | Available Spaces: ' + avail_space + " : ENTERED INTO DICTIONARY")
-        '''
-        # last checked info
-        last_checked = soup.find('table', {'id': 'ps4'}).find('p', {'class': 'centertight'}).text
-        print(last_checked)
-        '''
-
+    # general function for invoking HTML parse
     def find_parking(self):
         http = urllib3.PoolManager(cert_reqs='CERT_REQUIRED', ca_certs=certifi.where())
         url_php = "https://www.utdallas.edu/services/transit/garages/_code.php"
         response = http.request('GET', url_php)
         soup = BeautifulSoup(response.data, features="html.parser")
-        self.find_parking_ps1(soup)
-        self.find_parking_ps3(soup)
-        self.find_parking_ps4(soup)
+        self.parse_parking(soup, 'ps1')
+        self.parse_parking(soup, 'ps3')
+        self.parse_parking(soup, 'ps4')
 '''
     # finds the corresponding color for level of parking structure
     # "PS1" is Parking Structure 1, "PS3" is Parking Structure 3, "PS4" is Parking Structure 4
