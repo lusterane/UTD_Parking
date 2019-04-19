@@ -1,0 +1,43 @@
+/* Reset all site styles for greater cross-browser consistency  */
+/* ------------------------------------------------------------ */
+/* ------------------------------------------------------------ */
+
+
+*, html, body, div, span, object, applet, iframe,
+h1, h2, h3, h4, h5, h6, p, img,
+a, a:link, a:visited, a:hover, a:active, a:focus,
+pre, code, blockquote, cite, abbr, acronym, address,
+strong, em, b, i, u, strike, center,
+big, small, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td
+    {
+    margin: 0em;
+    padding: 0em;
+    vertical-align: baseline;
+    line-height: 100%;
+    font-size: 100%;
+    font-family: inherit;
+    font-weight: inherit;
+    text-align: left;
+    text-decoration: none;
+    color: inherit;
+    background-color: transparent;
+    background-image: none;
+    border-style: none;
+    border-width: 0px;
+    outline-style: none;
+    outline-width: 0px;
+    }
+
+table
+    {
+    border-collapse: collapse;
+    border-spacing: 0em;
+    }
+
+ol, ul, dl
+    {
+    list-style: none;
+    }

@@ -1,0 +1,184 @@
+/* Custom Formatting                                            */
+/* ------------------------------------------------------------ */
+/* ------------------------------------------------------------ */
+
+
+#reloader
+    {
+    width: 100%;
+    height: 97.0em;
+    margin-top: 0.5em;
+    margin-right: auto;
+    margin-bottom: 0em;
+    margin-left: auto;
+    }
+
+#parking_body
+    {
+    color: #000000;                     /* Black */
+    background-color: #ffffff;          /* Brilliance White */
+    }
+
+.parking_hold
+    {
+    margin-top: 0em;
+    margin-right: auto;
+    margin-bottom: 0em;
+    margin-left: auto;
+    }
+
+.parking
+    {
+    margin-top: 0em;
+    margin-right: auto;
+    margin-bottom: 0em;
+    margin-left: auto;
+    width: 10.0em;
+    }
+
+
+
+
+.parking td.parking_green
+    {
+    color: #ffffff;                     /* Brilliance White */
+    background-color: #005710;
+    }
+
+
+.parking td.parking_gold
+    {
+    color: #000000;                     /* Black */
+    background-color: #ffdd00;
+    }
+
+
+.parking td.parking_orange_evening
+    {
+    color: #ffffff;                     /* Brilliance White */
+    background-color: #ff571f;
+    background-image: url("img/parking_stripe.png");
+    background-repeat: repeat;
+    background-position: center center;
+    }
+
+.parking td.parking_orange_evening p
+    {
+    background-color: #ff571f;
+    padding: 0.125em 0.25em 0.125em 0.25em;
+    }
+
+
+.parking td.parking_orange
+    {
+    color: #ffffff;                     /* Brilliance White */
+    background-color: #ff571f;
+    }
+
+
+.parking td.parking_purple
+    {
+    color: #ffffff;                     /* Brilliance White */
+    background-color: #773dbc;
+    }
+
+
+.parking td.parking_housing_apartment
+    {
+    color: #ffffff;                     /* Brilliance White */
+    background-color: #cc292b;
+    }
+
+
+.parking td.parking_housing_hall
+    {
+    color: #ffffff;                     /* Brilliance White */
+    background-color: #cc292b;
+    background-image: url("img/parking_stripe.png");
+    background-repeat: repeat;
+    background-position: center center;
+    }
+
+.parking td.parking_housing_hall p
+    {
+    background-color: #cc292b;
+    padding: 0.125em 0.25em 0.125em 0.25em;
+    }
+
+
+.parking td.parking_handicap
+    {
+    color: #ffffff;                     /* Brilliance White */
+    background-color: #00a1de;          /* Stratos Blue */
+    }
+
+
+.parking td.parking_pay_by_space
+    {
+    color: #000000;                     /* Black */
+    background-color: #f4f4f2;          /* 25% of Warm Gray 2 */
+    }
+
+
+.parking td.parking_coupon_code
+    {
+    color: #ffffff;                     /* Brilliance White */
+    background-color: #a59d95;          /* Warm Gray 6  */
+    }
+
+
+.parking td.parking_visitor_pass
+    {
+    color: #ffffff;                     /* Brilliance White */
+    background-color: #8b8178;          /* Warm Gray 8 */
+    }
+
+
+
+
+@media screen and (min-width: 31.0em)
+    {
+    #reloader
+        {
+        height: 65.5em;
+        }
+    }
+
+@media screen and (min-width: 29.0em)
+    {
+    .parking_hold
+        {
+        width: 26.5em;
+        }
+
+    #ps1,
+    #ps3
+        {
+        float: left;
+        margin-left: 0.125em;
+        margin-right: 0.125em;
+        }
+    }
+
+@media screen and (min-width: 43.0em)
+    {
+    #reloader
+        {
+        height: 34.0em;
+        }
+    }
+
+@media screen and (min-width: 41.0em)
+    {
+    .parking_hold
+        {
+        width: 40.0em;
+        }
+
+    #ps4
+        {
+        float: left;
+        margin-left: 0.125em;
+        margin-right: 0.125em;
+        }
+    }

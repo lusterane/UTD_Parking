@@ -1,0 +1,32 @@
+//////// Define all the functions used to enhance this page.
+
+
+//// Define shared variables.
+var theReloaderPath = "";           // Path of the content to be reloaded.
+var theReloaderPage = "_code.php";  // Source of the content to be reloaded.
+var theReloaderWait = 10000;        // Delay between reloads, in milliseconds.
+
+
+//// Automatically reload the contents of one page element every few seconds.
+function runReloader()
+    {
+    theReloader.setAttribute('src', theReloaderPath + theReloaderPage);
+    setTimeout("runReloader()", theReloaderWait);
+    }
+
+
+//// Ensure that the expected page element exists, has loaded, and can be changed.
+function startReloader()
+    {
+    theReloader = document.getElementById('reloader');
+
+    if ((theReloader != null) && (theReloader.setAttribute))
+        {
+        // Start a function which continuously reloads one page element.
+        runReloader();
+        }
+    }
+
+
+//// Call all the functions for this page.
+addToPage(startReloader);
