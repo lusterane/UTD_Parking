@@ -18,7 +18,6 @@ class CrawlRoot:
     # finds parking options and available Spaces of PS1
     # returns dictionary of available space and level+color
     def find_parking_ps1(self, soup):
-        print("Parking Structure 1")
         for element in soup.findAll('table', {'id': 'ps1'}):
             body = element.find('tbody')
             # finds each row for parking
@@ -31,14 +30,9 @@ class CrawlRoot:
                 self.ps1[option] = avail_space
                 # print('Level: ' + level + ' | Option: ' + option + ' | Available Spaces: ' + avail_space + " : ENTERED INTO DICTIONARY")
 
-        # last checked info
-        last_checked = soup.find('table', {'id': 'ps1'}).find('p', {'class': 'centertight'}).text
-        print(last_checked)
-
     # finds parking options and available Spaces of PS3
     # returns dictionary of available space and level+color
     def find_parking_ps3(self, soup):
-        print("Parking Structure 3")
         for element in soup.findAll('table', {'id': 'ps3'}):
             body = element.find('tbody')
             # finds each row for parking
@@ -48,18 +42,13 @@ class CrawlRoot:
                 option = cells[1].text
                 avail_space = cells[2].text
                 # note: levels may not be needed for this project
-                self.ps1[option] = avail_space
+                self.ps3[option] = avail_space
                 # print('Level: ' + level + ' | Option: ' + option + ' | Available Spaces: ' + avail_space + " : ENTERED INTO DICTIONARY")
-        '''
-        # last checked info
-        last_checked = soup.find('table', {'id': 'ps3'}).find('p', {'class': 'centertight'}).text
-        print(last_checked)
-        '''
 
     # finds parking options and available Spaces of PS4
     # returns dictionary of available space and level+color
     def find_parking_ps4(self, soup):
-        for element in soup.findAll('table', {'id': 'ps1'}):
+        for element in soup.findAll('table', {'id': 'ps4'}):
             body = element.find('tbody')
             # finds each row for parking
             for row in body.findAll('tr'):
@@ -68,7 +57,7 @@ class CrawlRoot:
                 option = cells[1].text
                 avail_space = cells[2].text
                 # note: levels may not be needed for this project
-                self.ps1[option] = avail_space
+                self.ps4[option] = avail_space
                 # print('Level: ' + level + ' | Option: ' + option + ' | Available Spaces: ' + avail_space + " : ENTERED INTO DICTIONARY")
         '''
         # last checked info
