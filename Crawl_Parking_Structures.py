@@ -44,6 +44,7 @@ class CrawlRoot:
                 '''
 
     # general function for invoking HTML parse
+    # placeholder function for lambda invocation
     def find_parking(self):
         http = urllib3.PoolManager(cert_reqs='CERT_REQUIRED', ca_certs=certifi.where())
         url_php = "https://www.utdallas.edu/services/transit/garages/_code.php"
