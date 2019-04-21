@@ -11,9 +11,23 @@ from bs4 import BeautifulSoup
 class CrawlRoot:
 
     def __init__(self):
-        self.ps1 = {}
-        self.ps3 = {}
-        self.ps4 = {}
+        self.intent_dict = {
+            # "purple": {"parking structure 1": "5", "parking structure 3": "10", "parking structure 4": "6"},
+            "purple": {},
+            "orange": {},
+            "gold": {},
+            "green": {},
+            "red": "Sorry, I can only help with garage parking.",
+            "grey": {},
+            "pay-by-space": {}
+        }
+
+        # mapped values for HTML parsing
+        self.parking_dict = {
+            "ps1": "parking structure 1",
+            "ps3": "parking structure 3",
+            "ps4": "parking structure 4"
+        }
 
     # finds parking options and available Spaces of parking structure
     # returns dictionary of available space and level+color
@@ -26,23 +40,21 @@ class CrawlRoot:
             # finds each row for parking
             for row in body.findAll('tr'):
                 cells = row.findAll("td")
-                level = cells[0].text
-                option = cells[1].text
-                avail_space = cells[2].text
+
+                level = cells[0].text # integer
+                # format string for permit type
+                option = cells[1].text.rsplit(' ', 1)[0].lower() # orange permit
+                avail_space = cells[2].text # integer
                 # note: levels may not be needed for this project
-                if park_struc == 'ps1':
-                    self.ps1[option] = avail_space
-                elif park_struc == 'ps3':
-                    self.ps3[option] = avail_space
-                else:
-                    self.ps4[option] = avail_space
-                # print('Level: ' + level + ' | Option: ' + option + ' | Available Spaces: ' + avail_space + " : ENTERED INTO DICTIONARY")
+
+                # build dictionary
+                self.intent_dict[option].update({self.parking_dict[park_struc]: avail_space})
+
                 '''
                 # last checked info
                 last_checked = soup.find('table', {'id': 'ps4'}).find('p', {'class': 'centertight'}).text
                 print(last_checked)
                 '''
-
     # general function for invoking HTML parse
     # placeholder function for lambda invocation
     def find_parking(self):
