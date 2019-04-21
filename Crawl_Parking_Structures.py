@@ -9,7 +9,6 @@ from bs4 import BeautifulSoup
 
 
 class CrawlRoot:
-
     def __init__(self):
         self.intent_dict = {
             # "purple": {"parking structure 1": "5", "parking structure 3": "10", "parking structure 4": "6"},

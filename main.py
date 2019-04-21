@@ -9,7 +9,7 @@ def main():
     cr = CrawlRoot()
     cr.find_parking()
     print(cr.intent_dict)
-
+    '''
     test_dict = {
         "purple": {"parking structure 1": "5", "parking structure 3": "10", "parking structure 4": "6"},
         "orange": {"parking structure 1": "6", "parking structure 3": "11", "parking structure 4": "7"},
@@ -19,6 +19,7 @@ def main():
         "grey": {"parking structure 1": "5", "parking structure 3": "10", "parking structure 4": "6"}
     }
     print(test_dict)
+    '''
 
 if __name__ == "__main__":
     main()
