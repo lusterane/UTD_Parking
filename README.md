@@ -20,9 +20,9 @@ urllib3==1.24.2
 Crawl_Parking_Structures.py is the required module.
 1. Install the required dependencies in Lambda 
 2. Import functional class from Crawl_Parking_Structures.py, 'CrawlRoot'
-*`from Crawl_Parking_Structures import CrawlRoot`
+* `from Crawl_Parking_Structures import CrawlRoot`
 3. Declare CrawlRoot object to use methods
-*`cr = CrawlRoot()`
+* `cr = CrawlRoot()`
 4. **[IMPORTANT]**  Run the web indexing with find_parking() method to fill dictionary
 * `cr.find_parking()`
 5. A dictionary will be populated called `intent_dict`. 
