@@ -1,7 +1,10 @@
 # UTD_Parking
 Finds available parking for UTD students
 
-Contains web crawler as part of implementation for Alexa Skill. Indexes information from UTD Auxilliary Services Real-Time parking information.
+Contains web crawler and lambda function as part of implementation for Alexa Skill. Indexes information from UTD Auxilliary Services Real-Time parking information.
+
+## Thank you!
+Special thanks to my incredible colleages to help make this project happen: Jin Liu and Richard Lin
 
 ## Dependencies
 
