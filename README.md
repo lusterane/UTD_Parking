@@ -1,10 +1,16 @@
 # UTD_Parking
 Finds available parking for UTD students
 
+Special thanks to my incredible colleages to help make this project happen: Jin Liu and Richard Li
+
+## What it does?
+Assists in finding parking information at The University of Texas at Dallas.
+
+## What's Inside?
 Contains web crawler and lambda function as part of implementation for Alexa Skill. Indexes information from UTD Auxilliary Services Real-Time parking information.
 
-## Thank you!
-Special thanks to my incredible colleages to help make this project happen: Jin Liu and Richard Lin
+## How to Use
+Activate on any Amazon Alexa device and say "Open Parking Assist". From there, our Alexa Skill will activate and you just follow the instructions from there.
 
 ## Dependencies
 
@@ -24,7 +30,7 @@ urllib3==1.24.2
 
 [Note: soupseive is still a required dependency. Just need >=1.2 version]
 
-## How To Use/Integrate
+## How To Integrate into Alexa Skill
 
 **Crawl_Parking_Structures.py** is the required module.
 1. Install the required dependencies noted above in Lambda
